@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body{
+     font-family: "Orbitron", sans-serif;
+     background: url("./background_img.avif") no-repeat center center/cover;
+     height: 100vh;
+     display: flex;
+     flex-direction: column;
+     gap:25px;
+     justify-content: center;
+     align-items: center;
+     color: #fff;
+}
+body h2{
+    padding:0px 30px;
+}
+.container{
+    width:350px;
+    height: 220px;
+    background-color:rgb(42, 42, 42);
+    border-radius:30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#timer{
+    width: 100%;
+    color: #fff;
+    font-size: 46px;
+    text-align: center;
+    margin: 0px auto;
+    padding: 35px;
+}
+.buttons{
+    text-align: center;
+}
+button{
+    margin:0 10px;
+    border: none;
+    cursor: pointer;
+}
+button i{
+    font-size: 2rem;
+    /* padding: 10px; */
+    padding:5px;
+    color:#fff;
+    width: 50px;
+}
+#play{
+    background-color: green;
+}
+#pause{
+    background-color: orange;
+}
+#reset{
+    background-color: red;
+}
