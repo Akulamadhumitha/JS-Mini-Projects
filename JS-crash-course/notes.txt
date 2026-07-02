@@ -1,0 +1,92 @@
+//constructor function
+function Person(firstN,lastN,dob){
+   this.firstN = firstN;
+   this.lastN = lastN;
+   this.dob = new Date(dob);
+}
+Person.prototype.getBirthYear = function() {
+ return this.dob.getFullYear();   
+}
+Person.prototype.getFullName = function() {
+ return `${this.firstN} ${this.lastN}`;
+}
+//initiate object
+const p1 = new Person("madhu","akula",'2-18-2006')
+console.log(p1.dob);
+console.log(p1.getBirthYear());
+console.log(p1.getFullName());
+-------the above one is older version of object-oriented Programming using javascript ES5-------------------------------------------------
+//1.
+class Person {
+    constructor(firstN,lastN,dob) {
+        this.firstN=firstN;
+        this.lastN=lastN;
+        this.dob = new Date(dob);
+    }
+    getBirthYear() {
+        return this.dob.getFullYear();
+    }
+    getFullName() {
+        return `${this.firstN} ${this.lastN}`
+    }
+}
+
+const p1 = new Person("madhu","akula","2-18-2006");
+console.log(p1);
+console.log(p1.getBirthYear());
+-----------------the above is ES6 object oriented programming in js which is more cool,organized and easier version-----------------------
+const ul = document.querySelector('.items');
+// ul.remove();
+// ul.lastElementChild.remove();
+ul.firstElementChild.textContent = 'Hellohi';
+ul.children[1].innerText = 'nerd'
+ul.lastElementChild.innerHTML = '<h4>ByeBye</h4>';
+
+const btn = document.querySelector('.btn');
+---------the above one is about selectors in dom-------------------------------------------------------------------------------------------
+const btn = document.querySelector('.btn');
+
+//mouseover = when we hover on the button div
+//mouseout = when the hover is out of the button div
+//like these above they are many addEventListeners
+  
+btn.addEventListener('click',(e)=>{
+    e.preventDefault();
+    // console.log(e.target.className);
+    document.querySelector('#my-form').style.background = '#ccc';
+})
+
+
+//2.
+const myform = document.querySelector('#my-form');
+const nameI = document.querySelector('#name');
+const emailI = document.querySelector('#email');
+const msg = document.querySelector('.msg');
+const userList = document.querySelector('#users');
+
+myform.addEventListener("submit",onSubmit);
+
+function onSubmit(e) {
+    e.preventDefault();
+    // console.log(nameI.value);   
+    if(nameI.value==='' || emailI.value===''){
+        //now i have an error class and i want to add that to the msg class
+        msg.classList.add('error');
+        msg.innerHTML = 'please enter all fields';
+        //now i want to the error message to be disappear within the 3 sec
+        //that can be do that using settimeout in js
+        setTimeout(()=>msg.remove(),3000);
+    }else{
+        // console.log('success');
+        //now i want to store the both values and appeand it as list item to the users parent list
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(`${nameI.value} : ${emailI.value}`));
+
+        userList.appendChild(li);
+
+        //clear fields
+        nameI.value = '';
+        emailI.value = '';
+    }
+}
+------------the above one is about addEventListeners----------------------------------------------------------------------------------

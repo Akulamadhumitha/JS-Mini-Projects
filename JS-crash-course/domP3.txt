@@ -1,0 +1,79 @@
+const btn = document.getElementById('button').addEventListener('click',buttonClk);
+function buttonClk(e){
+    // // console.log("button clicked")
+    // // console.log(e)
+    // console.log(e.target);
+    // console.log(e.target.className);
+    // console.log(e.target.id);
+    // const output = document.getElementById('output');
+    // output.innerHTML =  '<h1>'+e.target.id+'</h1>';
+    // //tells us whatever kind type of event that it is
+    // console.log(e.type);
+    // console.log(e.altKey);
+    // console.log(e.ctrlKey);
+    // console.log(e.shiftKey);
+}
+----------------the above ones are some of the events------------------------------------
+
+const btn = document.getElementById('button');
+// const output = document.getElementById('output');
+// btn.addEventListener('click',runEvent);
+// btn.addEventListener('dblclick',runEvent);
+// btn.addEventListener('mousedown',runEvent);
+// btn.addEventListener('mouseup',runEvent);
+// btn.addEventListener('mouseenter',runEvent); //when we enter the parent
+// btn.addEventListener('mouseleave',runEvent); //when we leave from parent
+// btn.addEventListener('mouseout',runEvent); // when we out from child inside the parent
+// btn.addEventListener('mouseover',runEvent); // when we enter the child inside the parent 
+
+// btn.addEventListener('mousemove',runEvent); // when we move the mouse inside that particular element it counts.
+
+
+function runEvent(e){
+    // console.log("Event type: "+e.type);
+    document.body.style.backgroundColor = "rgb("+e.offsetX+","+e.offsetY+", 40)";
+}
+--------------------------------------------------------------------------------------------------------------------------------
+const iteminput = document.querySelector('input[type="text"]');
+const form = document.querySelector('form');
+// iteminput.addEventListener("keydown",runEvent);
+// iteminput.addEventListener("keyup",runEvent);
+// iteminput.addEventListener("keypress",runEvent);
+
+// iteminput.addEventListener("focus",runEvent); // when click inside the input box its focus.
+// iteminput.addEventListener("blur",runEvent); // when click outside the input box its blur.
+
+// iteminput.addEventListener("cut",runEvent); // if we cut in input box there occurs cut event
+// iteminput.addEventListener("paste",runEvent); //if we paste into input box there occurs paste event.
+
+iteminput.addEventListener("input",runEvent); //what we are typing will be noted in the input box.
+
+function runEvent(e){
+   console.log("enter: "+e.type);
+   document.getElementById('output').innerHTML = "<h3>"+e.target.value+"</h3>"
+}
+----------------------------------------------------------------------------------------------------------------------------------------
+const iteminput = document.querySelector('input[type="text"]');
+const form = document.querySelector('form');
+const select = document.querySelector('select');
+// iteminput.addEventListener("keydown",runEvent);
+// iteminput.addEventListener("keyup",runEvent);
+// iteminput.addEventListener("keypress",runEvent);
+
+// iteminput.addEventListener("focus",runEvent); // when click inside the input box its focus.
+// iteminput.addEventListener("blur",runEvent); // when click outside the input box its blur.
+
+// iteminput.addEventListener("cut",runEvent); // if we cut in input box there occurs cut event
+// iteminput.addEventListener("paste",runEvent); //if we paste into input box there occurs paste event.
+
+// iteminput.addEventListener("input",runEvent); //what we are typing will be noted in the input box.
+
+// select.addEventListener("change",runEvent)
+form.addEventListener('submit',runEvent);
+function runEvent(e){
+    e.preventDefault()
+//    console.log("enter: "+e.type);
+//    console.log(e.target.value)
+//    document.getElementById('output').innerHTML = "<h3>"+e.target.value+"</h3>"
+}
+---------------Finished dom revision now have to do one  task------------------------------------------------------------------
